@@ -8,6 +8,9 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <rooms name="rooms">
     <room>rooms\rm_topMenu</room>
   </rooms>
