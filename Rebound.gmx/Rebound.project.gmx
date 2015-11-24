@@ -5,12 +5,36 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="TouchControls">
+      <sprite>sprites\sp_a_button</sprite>
+      <sprite>sprites\sp_b_button</sprite>
+      <sprite>sprites\sp_x_button</sprite>
+      <sprite>sprites\sp_y_button</sprite>
+      <sprite>sprites\spr_Joystick</sprite>
+      <sprite>sprites\spr_JoystickKnob</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="TouchControls">
+      <scripts name="JoyStick">
+        <script>scripts\GetDirection.gml</script>
+      </scripts>
+      <script>scripts\scr_playerStepSnippet.gml</script>
+      <script>scripts\player_StepEvent.gml</script>
+    </scripts>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
   </fonts>
+  <objects name="objects">
+    <objects name="TouchControls">
+      <object>objects\obj_touchControlls</object>
+      <object>objects\obj_GlobalJoystick</object>
+    </objects>
+  </objects>
   <rooms name="rooms">
     <room>rooms\rm_topMenu</room>
   </rooms>
