@@ -55,10 +55,10 @@ k_special   =0
 new_player    =0
 new_controller=0
 
-k_dash    = 82      //Right Shoulder on XBOX 360 Gamepad
-k_shoot   = ord('S')
-k_jump    = ord('T')
-k_special = 76      //Left Shoulder on XBOX 360 Gamepad
+k_dash    = gamepad_button_check_pressed(0,gp_shoulderrb)      //Right Shoulder on XBOX 360 Gamepad
+k_shoot   = gamepad_button_check_pressed(0,gp_face3)
+k_jump    = gamepad_button_check_pressed(0,gp_face1)
+k_special = gamepad_button_check_pressed(0, gp_shoulderlb)      //Left Shoulder on XBOX 360 Gamepad
 
 //display_set_gui_size(320, 240); // This is the default size of your Window for GUI Purposes.
 //display_set_gui_maximise(); //use this to alter the draw size to bring the joyStick bakc into the drawn window
@@ -114,7 +114,8 @@ ybutton3    =   virtual_key_add(292,160,28,28,k_special);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(k_jump)==1 draw_sprite(sp_a_button,0,window_get_width()-64,window_get_height()-64)
+            <string>scr_playerStepSnippet()
+if keyboard_check(k_jump)==1 draw_sprite(sp_a_button,0,window_get_width()-64,window_get_height()-64)
 else draw_sprite(sp_a_button,1,window_get_width()-64,window_get_height()-64)
 
 if keyboard_check(k_special)==1 draw_sprite(sp_y_button,0,window_get_width()-96,window_get_height()-96)
