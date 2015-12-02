@@ -31,8 +31,8 @@
   </fonts>
   <objects name="objects">
     <objects name="TouchControls">
-      <object>objects\obj_GlobalJoystick</object>
       <object>objects\obj_touchControlls</object>
+      <object>objects\obj_GlobalJoystick</object>
     </objects>
   </objects>
   <rooms name="rooms">
