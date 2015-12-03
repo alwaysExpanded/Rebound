@@ -72,63 +72,7 @@ lad=-1
             <kind>1</kind>
             <string>///Obtain directional values used for drawing
 GetDirection_All();
-/*
-if gamepad_is_connected(0)
-{
-    left_start_x = 100
-    left_start_y = 100
-    left_analog_direction = actual_direction
 
-    lad = actual_direction
-}
-else
-{
-for (i=0;i&lt;4;i += 1)
-{
-//   Check for first touch
-if device_mouse_check_button_pressed(i,mb_left)
-    {
-        //confine the joystick to the window
-        if(device_mouse_raw_x(i) &lt; window_get_width()/2 &amp;&amp; device_mouse_raw_y(i) &gt;= window_get_height()/2)
-        {
-            left_device_id=i
-            left_start_x=device_mouse_raw_x(i)
-            left_start_y=device_mouse_raw_y(i)
-                
-        }
-
-    }
-}
-
-// check mouse move
-
-if left_device_id &gt; -1
-{
-    left_analog_direction = radtodeg(arctan2((device_mouse_raw_y(left_device_id)-(left_start_y)),(device_mouse_raw_x(left_device_id)-(left_start_x)+.000001)));
-    left_analog_distance = sqrt(sqr(device_mouse_raw_x(left_device_id)-(left_start_x))+sqr(device_mouse_raw_y(left_device_id)-(left_start_y)));;
-
-}
-
-
-//str=""
-// check for release
-
-if device_mouse_check_button_released(left_device_id,mb_left)
-{
-    left_device_id=-1
-    left_analog_direction = -1
-    left_analog_distance = -1
-}
-
-
-// Set variables for all objects to use
-lad=-1
-if abs(left_analog_distance) &gt; 15
-{
-    lad=point_direction(left_start_x,left_start_y,device_mouse_raw_x(left_device_id),device_mouse_raw_y(left_device_id))
-}
-}
-*/
 </string>
           </argument>
         </arguments>
@@ -169,7 +113,7 @@ draw_sprite(spr_JoystickKnob,0, point_x, point_y)
 else
 {
 draw_sprite(spr_Joystick,0,left_start_x,left_start_y)
-draw_sprite(spr_JoystickKnob,0, left_start_x + distance_x, left_start_y + distance_y)
+draw_sprite(spr_JoystickKnob,0, left_start_x, left_start_y)
 }
 </string>
           </argument>

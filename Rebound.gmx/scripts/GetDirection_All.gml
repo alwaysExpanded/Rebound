@@ -28,15 +28,21 @@ for (i=0;i<4;i += 1)
 //   Check for first touch
      if device_mouse_check_button_pressed(i,mb_left)
     {
+    //get the X and Y of the touch
       obj_GlobalJoystick.left_device_id = i;
-      obj_GlobalJoystick.left_start_x=device_mouse_raw_x(i)
-      obj_GlobalJoystick.left_start_y=device_mouse_raw_y(i)
+      obj_GlobalJoystick.left_start_x= 100
+      obj_GlobalJoystick.left_start_y= 100
+      //obj_GlobalJoystick.left_start_x=device_mouse_raw_x(i)
+      //obj_GlobalJoystick.left_start_y=device_mouse_raw_y(i)
       break;
     }
+    
+    //keep the joystick in a static posisition 
+    
 }
 
 //Obtain values if gamepad is being used
-if(gamepad_is_connected(0) && mouse_device_id == -1 && (gamepad_axis_value(0, gp_axislh) != 0 || gamepad_axis_value(0, gp_axislv) != 0))
+if(gamepad_is_connected(0) && (gamepad_axis_value(0, gp_axislh) != 0 || gamepad_axis_value(0, gp_axislv) != 0) || mouse_device_id == -1)
 {
     obj_GlobalJoystick.left_start_x= 100
     obj_GlobalJoystick.left_start_y= 100
@@ -84,8 +90,8 @@ if(obj_GlobalJoystick.left_device_id > -1)
 //Obtain values if keyboard is being used
 if(keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up) || keyboard_check(vk_down))
 {
-    obj_GlobalJoystick.left_start_x= 50
-    obj_GlobalJoystick.left_start_y= 50
+    //obj_GlobalJoystick.left_start_x= 50
+    //obj_GlobalJoystick.left_start_y= 50
     
     //Keyboard actuals are multiplied to show visible differences on input for debugging
     //Can change later
@@ -101,13 +107,6 @@ if(keyboard_check(vk_right) || keyboard_check(vk_left) || keyboard_check(vk_up) 
 if(device_mouse_check_button_released(left_device_id,mb_left))
 {
       obj_GlobalJoystick.left_device_id = -1;
-      obj_GlobalJoystick.left_start_x= -1
-      obj_GlobalJoystick.left_start_y=-1
-}
-
-//Preserved calculation for lad variable. Not sure if still in use?
-obj_GlobalJoystick.lad=-1
-if abs(obj_GlobalJoystick.left_analog_distance) > 15
-{
-    obj_GlobalJoystick.lad=point_direction(obj_GlobalJoystick.left_start_x,obj_GlobalJoystick.left_start_y,device_mouse_raw_x(obj_GlobalJoystick.left_device_id),device_mouse_raw_y(obj_GlobalJoystick.left_device_id))
+      //obj_GlobalJoystick.left_start_x= -1
+      //obj_GlobalJoystick.left_start_y=-1
 }
