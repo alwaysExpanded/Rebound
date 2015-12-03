@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar d_Left,d_Right,d_Up,d_Down,d_DownLeft,d_DownRight,d_UpLeft,d_UpRight;
+            <string>///Instantiate touch control variables
+globalvar d_Left,d_Right,d_Up,d_Down,d_DownLeft,d_DownRight,d_UpLeft,d_UpRight;
 
 d_Left=1
 d_Right=2
@@ -114,17 +115,18 @@ ybutton3    =   virtual_key_add(292,160,28,28,k_special);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_playerStepSnippet()
-if keyboard_check(k_jump)==1 draw_sprite(sp_a_button,0,window_get_width()-64,window_get_height()-64)
+            <string>///Draw touch control buttons
+scr_playerStepSnippet()
+if k_jump==1 draw_sprite(sp_a_button,0,window_get_width()-64,window_get_height()-64)
 else draw_sprite(sp_a_button,1,window_get_width()-64,window_get_height()-64)
 
-if keyboard_check(k_special)==1 draw_sprite(sp_y_button,0,window_get_width()-96,window_get_height()-96)
+if k_special==1 draw_sprite(sp_y_button,0,window_get_width()-96,window_get_height()-96)
 else draw_sprite(sp_y_button,1,window_get_width()-96,window_get_height()-96)
         
-if keyboard_check(k_dash)==1 draw_sprite(sp_b_button,0,window_get_width()-96,window_get_height()-32)
+if k_dash==1 draw_sprite(sp_b_button,0,window_get_width()-96,window_get_height()-32)
 else draw_sprite(sp_b_button,1,window_get_width()-96,window_get_height()-32)
         
-if keyboard_check(k_shoot)==1 draw_sprite(sp_x_button,0,window_get_width()-128,window_get_height()-64)
+if k_shoot==1 draw_sprite(sp_x_button,0,window_get_width()-128,window_get_height()-64)
 else draw_sprite(sp_x_button,1,window_get_width()-128,window_get_height()-64)
 
 

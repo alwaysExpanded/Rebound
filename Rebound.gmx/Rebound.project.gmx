@@ -19,11 +19,8 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="TouchControls">
-      <scripts name="JoyStick">
-        <script>scripts\GetDirection.gml</script>
-      </scripts>
       <script>scripts\scr_playerStepSnippet.gml</script>
-      <script>scripts\player_StepEvent.gml</script>
+      <script>scripts\GetDirection_All.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
