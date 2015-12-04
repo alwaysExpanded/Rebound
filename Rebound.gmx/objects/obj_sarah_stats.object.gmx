@@ -28,6 +28,15 @@
             <string>///Initialize statistics to be displayed
 pressure = 0;
 pressure_level = 0;
+
+actual_x = 0;
+actual_y = 0;
+
+distance_x = 0;
+distance_y = 0;
+
+true_analog_direction = 0;
+
 </string>
           </argument>
         </arguments>
@@ -51,14 +60,43 @@ pressure_level = 0;
           <argument>
             <kind>1</kind>
             <string>///Collect variables to display
+if(instance_exists(obj_player_dummy))
+{
 pressure = obj_player_dummy.pressure;
 pressure_level = obj_player_dummy.pressure_level;
+}
+else
+{
+pressure = 0;
+pressure_level = 0;
+}
+
+if(instance_exists(obj_GlobalJoystick))
+{
+actual_x = obj_GlobalJoystick.actual_x;
+actual_y = obj_GlobalJoystick.actual_y;
+
+distance_x = obj_GlobalJoystick.distance_x;
+distance_y = obj_GlobalJoystick.distance_y;
+
+true_analog_direction = obj_GlobalJoystick.true_analog_direction;
+}
+else
+{
+actual_x = 0;
+actual_y = 0;
+
+distance_x = 0;
+distance_y = 0;
+
+true_analog_direction = 0;
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -76,9 +114,10 @@ pressure_level = obj_player_dummy.pressure_level;
           <argument>
             <kind>1</kind>
             <string>///Start Drawing!
-draw_set_colour(c_yellow);
- draw_set_font(-1);
-draw_text(window_get_width() - 100, window_get_height() + 100, "Pressure Level: " + pressure_level);
+draw_set_colour(c_black);
+draw_set_font(-1);
+draw_text(window_get_width()/2, window_get_height()/2, "Pressure Level: " + string(pressure_level) + "#Pressure: " + string(pressure));
+draw_text(window_get_width()/2, (window_get_height()+100)/2, "actual_x: " + string(actual_x) + "#actual_y: " + string(actual_y) + "#distance_x: " + string(distance_x)+ "#distance_y: " + string(distance_y) + "#true_analog_direction: " + string(true_analog_direction));
 </string>
           </argument>
         </arguments>

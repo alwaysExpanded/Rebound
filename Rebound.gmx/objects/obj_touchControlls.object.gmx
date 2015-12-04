@@ -129,8 +129,6 @@ else draw_sprite(sp_b_button,1,window_get_width()-96,window_get_height()-32)
 if k_shoot==1 draw_sprite(sp_x_button,0,window_get_width()-128,window_get_height()-64)
 else draw_sprite(sp_x_button,1,window_get_width()-128,window_get_height()-64)
 
-draw_text(window_get_width()-156, window_get_height()-156, "Pressure Level: ");
-
 
 
 </string>
