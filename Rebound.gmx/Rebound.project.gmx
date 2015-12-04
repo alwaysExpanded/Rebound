@@ -14,6 +14,12 @@
       <sprite>sprites\spr_Joystick</sprite>
       <sprite>sprites\spr_JoystickKnob</sprite>
     </sprites>
+    <sprites name="Sarah">
+      <sprite>sprites\spr_player_dummy</sprite>
+    </sprites>
+    <sprites name="Environment">
+      <sprite>sprites\spr_wall_dummy</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -30,6 +36,13 @@
     <objects name="TouchControls">
       <object>objects\obj_touchControlls</object>
       <object>objects\obj_GlobalJoystick</object>
+      <object>objects\obj_sarah_stats</object>
+    </objects>
+    <objects name="Sarah">
+      <object>objects\obj_player_dummy</object>
+    </objects>
+    <objects name="Environment">
+      <object>objects\obj_wall_dummy</object>
     </objects>
   </objects>
   <rooms name="rooms">

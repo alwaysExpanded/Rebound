@@ -78,7 +78,15 @@ if(obj_GlobalJoystick.left_device_id > -1)
     actual_x = device_mouse_raw_x(mouse_device_id);
     actual_y = device_mouse_raw_y(mouse_device_id);
     distance_x = point_distance(start_x, device_mouse_raw_x(mouse_device_id), start_y, start_y);
+    if(start_x > actual_x)
+    {
+        distance_x = distance_x * -1
+    }
     distance_y = point_distance(start_x, start_x, start_y, device_mouse_raw_y(mouse_device_id));
+    if(start_y > actual_y)
+    {
+        distance_y = distance_y * -1
+    }
     direction_x = sign(distance_x);
     direction_y = sign(distance_y);
     true_analog_direction = radtodeg(arctan2((device_mouse_raw_y(mouse_device_id)-(left_start_y)),(device_mouse_raw_x(mouse_device_id)-(left_start_x)+.000001)));
