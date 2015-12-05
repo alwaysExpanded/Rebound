@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Instantiate our hero!
-grav_force = 1;
+grav_force = .5;
 horizontal_speed = 0;
 vertical_speed = 0
 jump_speed = 12;
@@ -72,14 +72,14 @@ else
     //Free-faaaaaalling ~ (Gravity's doing it's thing)
     if(vertical_speed &lt; 10)
     {
-        //if(vertical_speed &lt; 0)
-        //{
-            //vertical_speed += grav_force;
-        //}
-        //else
-        //{
-            vertical_speed += grav_force * (1 - (pressure_level * .15));
-        //}
+        if(vertical_speed &lt; 0)
+        {
+            vertical_speed += grav_force;
+        }
+        else
+        {
+            vertical_speed += grav_force * (1 - (pressure_level * .18));
+        }
     }
 }
 

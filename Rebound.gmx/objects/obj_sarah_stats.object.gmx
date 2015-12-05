@@ -37,6 +37,7 @@ distance_y = 0;
 
 true_analog_direction = 0;
 
+vertical_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -64,11 +65,13 @@ if(instance_exists(obj_player_dummy))
 {
 pressure = obj_player_dummy.pressure;
 pressure_level = obj_player_dummy.pressure_level;
+vertical_speed = obj_player_dummy.vertical_speed;
 }
 else
 {
 pressure = 0;
 pressure_level = 0;
+vertical_speed = 0;
 }
 
 if(instance_exists(obj_GlobalJoystick))
@@ -116,8 +119,8 @@ true_analog_direction = 0;
             <string>///Start Drawing!
 draw_set_colour(c_black);
 draw_set_font(-1);
-draw_text(window_get_width()/2, window_get_height()/2, "Pressure Level: " + string(pressure_level) + "#Pressure: " + string(pressure));
-draw_text(window_get_width()/2, (window_get_height()+100)/2, "actual_x: " + string(actual_x) + "#actual_y: " + string(actual_y) + "#distance_x: " + string(distance_x)+ "#distance_y: " + string(distance_y) + "#true_analog_direction: " + string(true_analog_direction));
+draw_text(window_get_width()/2, window_get_height()/2, "Pressure Level: " + string(pressure_level) + "#Pressure: " + string(pressure) + "#Vertical Speed: " + string(vertical_speed));
+draw_text(window_get_width()/2, (window_get_height()+150)/2, "actual_x: " + string(actual_x) + "#actual_y: " + string(actual_y) + "#distance_x: " + string(distance_x)+ "#distance_y: " + string(distance_y) + "#true_analog_direction: " + string(true_analog_direction));
 </string>
           </argument>
         </arguments>
