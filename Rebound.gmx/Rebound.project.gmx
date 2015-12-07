@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Music">
+      <sound>sound\bgmusic_ChooseYourCharacter</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="TouchControls">
       <sprite>sprites\sp_a_button</sprite>
@@ -16,6 +20,11 @@
     </sprites>
     <sprites name="Sarah">
       <sprite>sprites\spr_player_dummy</sprite>
+      <sprite>sprites\spr_player_pressure1</sprite>
+      <sprite>sprites\spr_player_pressure2</sprite>
+      <sprite>sprites\spr_player_pressure3</sprite>
+      <sprite>sprites\spr_player_pressure4</sprite>
+      <sprite>sprites\spr_player_pressure5</sprite>
     </sprites>
     <sprites name="Environment">
       <sprite>sprites\spr_wall_dummy</sprite>
@@ -43,6 +52,9 @@
     </objects>
     <objects name="Environment">
       <object>objects\obj_wall_dummy</object>
+    </objects>
+    <objects name="Music Player">
+      <object>objects\obj_musicplayer</object>
     </objects>
   </objects>
   <rooms name="rooms">

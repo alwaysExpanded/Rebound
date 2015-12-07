@@ -32,6 +32,8 @@ vertical_speed = 0
 jump_speed = 12;
 pressure = 0;
 pressure_level = 0;
+jumpsUsed = 0;
+maxJumps = 2;
 </string>
           </argument>
         </arguments>
@@ -61,14 +63,32 @@ if(place_meeting(x, y+1, obj_wall_dummy))
 {
     vertical_speed = 0;
     
+    //Used for Double-Jumping
+    //jumpsUsed = 0;
+       
     //Jump, gypsy! Press A!
     if(k_jump == 1)
     {
     vertical_speed -= jump_speed;
-    }
+    //Used for Double-Jumping
+    //jumpsUsed++;
+    } 
 }
 else
 {
+    //Jump, gypsy! Press A! (Double-Jump in the air)
+    /*
+    if(jumpsUsed &lt; 1)
+    {
+        jumpsUsed = 1;
+    }
+    if(k_jump == 1 &amp;&amp; jumpsUsed &lt; maxJumps)
+    {
+    vertical_speed = min(-jump_speed, max(-jump_speed, vertical_speed-jump_speed));
+    jumpsUsed++;
+    } 
+    */
+    
     //Free-faaaaaalling ~ (Gravity's doing it's thing)
     if(vertical_speed &lt; 10)
     {
@@ -100,14 +120,34 @@ else
 //Sarah, watch out for that wall! (Horizontal collisions)
 if(place_meeting(x+horizontal_speed, y, obj_wall_dummy))
 {
-    while(!place_meeting(x+sign(horizontal_speed), y, obj_wall_dummy))
+    yslope = 0;
+    while(place_meeting(x+horizontal_speed, y-yslope, obj_wall_dummy)  &amp;&amp; yslope &lt;= abs(1*horizontal_speed)) 
     {
-        x+= sign(horizontal_speed);
+        yslope += 1;
     }
-    horizontal_speed = 0;
+    if(place_meeting(x+horizontal_speed, y-yslope, obj_wall_dummy))
+    {
+        while(!place_meeting(x+sign(horizontal_speed), y, obj_wall_dummy))
+        {
+          x+= sign(horizontal_speed);
+        }
+        horizontal_speed = 0;
+    }
+    else
+    {
+        y-=yslope;
+    }
+    
 }
-//Show me ya moves, Sarah! (Make appropriate horizontal movements)
+//Show me ya moves, Sarah! (Make appropriate vertical movements)
+if(place_meeting(x, y+1, obj_wall_dummy))
+{
+x+= (horizontal_speed * (1 - (pressure_level * .18)));
+}
+else
+{
 x += horizontal_speed;
+}
 
 //Sarah, watch out for that wall! (vertical collisions)
 if(place_meeting(x, y + vertical_speed, obj_wall_dummy))
@@ -167,6 +207,53 @@ else
           <argument>
             <kind>1</kind>
             <string>///Collision: Don't let Sarah through!
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw our hero based on pressure!
+if(pressure_level == 1)
+{
+draw_sprite(spr_player_pressure1, 0, x, y);
+}
+else if(pressure_level == 2)
+{
+draw_sprite(spr_player_pressure2, 0, x, y);
+}
+else if(pressure_level == 3)
+{
+draw_sprite(spr_player_pressure3, 0, x, y);
+}
+else if(pressure_level == 4)
+{
+draw_sprite(spr_player_pressure4, 0, x, y);
+}
+else if(pressure_level == 5)
+{
+draw_sprite(spr_player_pressure5, 0, x, y);
+}
+else
+{
+draw_sprite(spr_player_dummy, 0, x, y);
+}
 </string>
           </argument>
         </arguments>
