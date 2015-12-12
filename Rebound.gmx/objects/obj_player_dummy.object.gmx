@@ -58,6 +58,8 @@ maxJumps = 2;
             <kind>1</kind>
             <string>///Check and update Sarah each frame
 scr_playerStepSnippet();
+yslope = 0;
+
 //Check if Sarah's on the ground
 if(place_meeting(x, y+1, obj_wall_dummy))
 {
@@ -98,7 +100,7 @@ else
         }
         else
         {
-            vertical_speed += grav_force * (1 - (pressure_level * .18));
+            vertical_speed += grav_force * (1 - (pressure_level * .16));
         }
     }
 }
@@ -139,10 +141,22 @@ if(place_meeting(x+horizontal_speed, y, obj_wall_dummy))
     }
     
 }
+
+var x_modifier = 1;
+
+if(pressure_level &gt;2)
+{
+ x_modifier = (1 - (pressure_level * .16));
+}
+
 //Show me ya moves, Sarah! (Make appropriate vertical movements)
 if(place_meeting(x, y+1, obj_wall_dummy))
 {
-x+= (horizontal_speed * (1 - (pressure_level * .18)));
+x+= (horizontal_speed * x_modifier);
+}
+else if(place_meeting(x, y+(abs(1.5*horizontal_speed)), obj_wall_dummy) || place_meeting(x, y-(abs(1.5*horizontal_speed)), obj_wall_dummy))
+{
+x+= (horizontal_speed * x_modifier);
 }
 else
 {
@@ -158,7 +172,6 @@ if(place_meeting(x, y + vertical_speed, obj_wall_dummy))
     }
     vertical_speed = 0;
 }
-
 //H'YES! (Make appropriate vertical movements)
 y += vertical_speed;
 
