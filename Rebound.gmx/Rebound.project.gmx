@@ -34,8 +34,10 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="TouchControls">
-      <script>scripts\scr_playerStepSnippet.gml</script>
-      <script>scripts\GetDirection_All.gml</script>
+      <script>scripts\scr_GetFaceButtonInput.gml</script>
+      <script>scripts\scr_GetDirection_All.gml</script>
+      <script>scripts\scr_UpdateMovement.gml</script>
+      <script>scripts\scr_AlterPressureDebug.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -45,7 +47,7 @@
     <objects name="TouchControls">
       <object>objects\obj_touchControlls</object>
       <object>objects\obj_GlobalJoystick</object>
-      <object>objects\obj_sarah_stats</object>
+      <object>objects\debug_player_stats</object>
     </objects>
     <objects name="Sarah">
       <object>objects\obj_player_dummy</object>

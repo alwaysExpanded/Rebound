@@ -116,7 +116,7 @@ ybutton3    =   virtual_key_add(292,160,28,28,k_special);
           <argument>
             <kind>1</kind>
             <string>///Draw touch control buttons
-scr_playerStepSnippet()
+scr_GetFaceButtonInput()
 if k_jump==1 draw_sprite(sp_a_button,0,window_get_width()-64,window_get_height()-64)
 else draw_sprite(sp_a_button,1,window_get_width()-64,window_get_height()-64)
 

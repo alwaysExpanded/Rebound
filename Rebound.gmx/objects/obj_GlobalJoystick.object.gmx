@@ -71,7 +71,7 @@ lad=-1
           <argument>
             <kind>1</kind>
             <string>///Obtain directional values used for drawing
-GetDirection_All();
+scr_GetDirection_All();
 
 </string>
           </argument>
