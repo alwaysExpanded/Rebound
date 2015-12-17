@@ -20,6 +20,9 @@
     </sprites>
     <sprites name="Sarah">
       <sprite>sprites\spr_player_dummy</sprite>
+      <sprite>sprites\spr_player_dummy_melee</sprite>
+      <sprite>sprites\spr_player_dummy_melee2</sprite>
+      <sprite>sprites\spr_player_dummy_melee3</sprite>
       <sprite>sprites\spr_player_pressure1</sprite>
       <sprite>sprites\spr_player_pressure2</sprite>
       <sprite>sprites\spr_player_pressure3</sprite>
@@ -51,6 +54,7 @@
     </objects>
     <objects name="Sarah">
       <object>objects\obj_player_dummy</object>
+      <object>objects\obj_player_dummy_melee</object>
     </objects>
     <objects name="Environment">
       <object>objects\obj_wall_dummy</object>

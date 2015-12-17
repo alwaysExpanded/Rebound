@@ -87,7 +87,6 @@
     <instance objName="obj_wall_dummy" x="64" y="416" name="inst_0DE9A037" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_dummy" x="64" y="384" name="inst_088E1275" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_dummy" x="256" y="672" name="inst_0A210404" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="928" y="0" name="inst_A05A6100" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_musicplayer" x="32" y="0" name="inst_C3640D72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_dummy" x="800" y="736" name="inst_20BBFE90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_dummy" x="832" y="736" name="inst_739675CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

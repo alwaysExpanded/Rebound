@@ -36,6 +36,9 @@ vertical_Modifier = 0;
 jump_speed = 12;
 pressure = 0;
 pressure_level = 0;
+attacking = false;
+attack_number = 0;
+direction_facing = 0;
 
 //Horizontal modifiers by pressure
 horizontal_Pressure_Modifiers = ds_list_create();
@@ -64,6 +67,30 @@ maxJumps = 2;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reset the number of attacks
+attack_number = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -85,6 +112,25 @@ maxJumps = 2;
 scr_GetFaceButtonInput();
 scr_AlterPressureDebug();
 scr_UpdateMovement(horizontal_speed, vertical_speed, jump_speed, grav_force, horizontal_Modifier, vertical_Modifier);
+
+if(k_shoot_pressed &amp;&amp; attack_number != 3)
+{
+    if(attacking == false)
+    {
+        attacking=true;
+    }
+    
+    if(attack_number &lt; 3)
+    {
+        attack_number++;
+        alarm[0] = 60;
+    with instance_create(x, y, obj_player_dummy_melee)
+    {
+        image_xscale = obj_player_dummy.image_xscale;
+        image_angle = obj_player_dummy.direction_facing;
+    }
+    }
+}
 
 </string>
           </argument>

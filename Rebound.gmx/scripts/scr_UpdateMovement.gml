@@ -52,10 +52,12 @@ else
 if(obj_GlobalJoystick.direction_x > 0)
 {
     horizontal_speed = max(argument0, default_horizontal_speed);
+    direction_facing = 0;
 }
 else if(obj_GlobalJoystick.direction_x < 0)
 {
     horizontal_speed = min(-argument0, -default_horizontal_speed);
+    direction_facing = 180;
 }
 else
 {
