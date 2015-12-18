@@ -72,6 +72,7 @@ if(place_meeting(x+horizontal_speed, y, obj_wall_dummy))
     {
         yslope += 1;
     }
+    
     if(place_meeting(x+horizontal_speed, y-yslope, obj_wall_dummy))
     {
         while(!place_meeting(x+sign(horizontal_speed), y, obj_wall_dummy))

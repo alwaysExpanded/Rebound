@@ -19,15 +19,10 @@
       <sprite>sprites\spr_JoystickKnob</sprite>
     </sprites>
     <sprites name="Sarah">
-      <sprite>sprites\spr_player_dummy</sprite>
-      <sprite>sprites\spr_player_dummy_melee</sprite>
-      <sprite>sprites\spr_player_dummy_melee2</sprite>
-      <sprite>sprites\spr_player_dummy_melee3</sprite>
-      <sprite>sprites\spr_player_pressure1</sprite>
-      <sprite>sprites\spr_player_pressure2</sprite>
-      <sprite>sprites\spr_player_pressure3</sprite>
-      <sprite>sprites\spr_player_pressure4</sprite>
-      <sprite>sprites\spr_player_pressure5</sprite>
+      <sprite>sprites\spr_player_sarah</sprite>
+      <sprite>sprites\spr_player_dummy_truemelee1</sprite>
+      <sprite>sprites\spr_player_dummy_truemelee2</sprite>
+      <sprite>sprites\spr_player_dummy_truemelee3</sprite>
     </sprites>
     <sprites name="Environment">
       <sprite>sprites\spr_wall_dummy</sprite>
